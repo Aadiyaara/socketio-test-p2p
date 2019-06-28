@@ -1,0 +1,31 @@
+{
+  "name": "socketio-test-p2p",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "ninenine",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aadiyaara/socketio-test-p2p.git"
+  },
+  "keywords": [
+    "SocketIo",
+    "P2P"
+  ],
+  "author": "Aadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aadiyaara/socketio-test-p2p/issues"
+  },
+  "homepage": "https://github.com/Aadiyaara/socketio-test-p2p#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
