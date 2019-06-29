@@ -16,7 +16,8 @@ var io = socket(server)
 io.on('connection', (socket) => {
 
     console.log('made socket connection', socket.id)
-    console.log('Connections: ', io.sockets.clients().length)
+    console.log('Connections: ', io.sockets.clients())
+    console.log('Number: ', io.sockets.clients().length)
     // Handle chat event
     socket.on('chat', function(data){
         // console.log(data)
