@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
     socket.join(socket.request.url.split('userId=')[1].split('&EIO=')[0])
 
     socket.on('chat', function(data){
-        socket.broadcast.emit('chat', data)
+        socket.broadcast.to(socket.request.url.split('userId=')[1].split('&EIO=')[0]).emit('chat', data)
     })
 
 })
