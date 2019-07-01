@@ -15,9 +15,8 @@ var server = app.listen(process.env.PORT || 4000 , function(){
 var io = socket(server)
 io.on('connection', (socket) => {
 
-    console.log('made socket connection', socket.id)
-    console.log('Connections: ', io.sockets.clients())
-    console.log('Number: ', io.sockets.clients().length)
+    console.log('made socket connection', socket)
+    // console.log('Connections: ', io.sockets.clients())
     // Handle chat event
     socket.on('chat', function(data){
         socket.broadcast.emit('chat', data)
