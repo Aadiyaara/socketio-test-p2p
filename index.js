@@ -28,6 +28,7 @@ io.on('connection', (socket) => {
 
     socket.on('state', function(data){
         socket.broadcast.to(socket.request.url.split('userId=')[1].split('&EIO=')[0]).emit('chat', data)
+        console.log('State data exchanged')
     })
 
 })
