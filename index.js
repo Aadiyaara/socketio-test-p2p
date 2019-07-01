@@ -18,6 +18,10 @@ io.on('connection', (socket) => {
     console.log('made socket connection', socket.request.url.split('userId=')[1].split('&EIO=')[0])
     // console.log('Connections: ', io.sockets.clients())
     // Handle chat event
+    // socket.on('join', function(room) {
+    //     console.log('Socket with Socket Id: ',  socket.id, ' as joined room: ', room)
+    socket.join(socket.request.url.split('userId=')[1].split('&EIO=')[0])
+
     socket.on('chat', function(data){
         socket.broadcast.emit('chat', data)
     })
