@@ -20,14 +20,15 @@ io.on('connection', (socket) => {
     // Handle chat event
     // socket.on('join', function(room) {
     //     console.log('Socket with Socket Id: ',  socket.id, ' as joined room: ', room)
-    socket.join(socket.request.url.split('userId=')[1].split('&EIO=')[0])
+    room = socket.request.url.split('userId=')[1].slice(0,7)
+    socket.join(room)
 
     socket.on('chat', function(data){
-        socket.broadcast.to(socket.request.url.split('userId=')[1].split('&EIO=')[0]).emit('chat', data)
+        socket.broadcast.to(room).emit('chat', data)
     })
 
     socket.on('state', function(data){
-        socket.broadcast.to(socket.request.url.split('userId=')[1].split('&EIO=')[0]).emit('state', data)
+        socket.broadcast.to(room).emit('state', data)
         console.log('State data exchanged')
     })
 
