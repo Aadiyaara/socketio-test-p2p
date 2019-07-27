@@ -25,6 +25,7 @@ io.on('connection', (socket) => {
 
     socket.on('chat', function(data){
         socket.broadcast.to(room).emit('chat', data)
+        console.log('Chat data exchanged')
     })
 
     socket.on('state', function(data){
